@@ -23,10 +23,10 @@ object ConcurrentTasks {
     println(s"$now [$thread] $message")
   }
   
-  def futureTask(n: Int) = FutureTask { 
-      debug("Start task " + n); 
+  def futureTask(label: Int) = FutureTask { 
+      debug(s"Start task $label"); 
       Thread.sleep(2500); 
-      debug("end task " + n) 
+      debug("end task $label") 
     }
     
   def run(c: Int) = (0 until c)
